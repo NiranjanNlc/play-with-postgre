@@ -1,0 +1,16 @@
+@import model.Book;
+@import helper._
+@(bookform : Form[Book])
+<body>
+
+
+    <h1>
+    @helper.form(action = helper.CSRF(routes.BooksController.save())){
+        @helper.inputText(bookform("id"))
+        @helper.inputText(bookform("title"))
+        @helper.inputText(bookform("price"))
+        @helper.inputText(bookform("author"))
+        <input type="submit" value="Create book">
+        }
+    </h1>
+</body>

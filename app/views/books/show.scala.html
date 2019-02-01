@@ -1,0 +1,14 @@
+
+@import model.Book;
+@(book: Book)
+
+
+
+           @book.id
+             @book.title<br>
+            @book.price<br>
+             @book.author<br>
+<a href="@routes.BooksController.edit(book.id)">edit  </a><br>
+<a href="@routes.BooksController.destroy(book.id)">delete </a><br>
+
+

@@ -1,0 +1,28 @@
+@*
+
+* This template takes a single argument, a String containing a
+* message to display.
+*@
+
+@import java.util
+@import model.Book;
+@(books: util.List[Book])
+
+<table style="width:100%">
+    <tr>
+        <th>Bookid</th>
+        <th>Bookname</th>
+        <th>Price</th>
+        <th>Author </th>
+    </tr>
+    @for(book<-books){
+    <tr>
+        <td>@book.id</td>
+        <td><a href="@routes.BooksController.show(book.id)">@book.title  </a></td>
+        <td>@book.price</td>
+        <td>@book.author</td>
+
+    </tr>
+     }
+</table>
+<a href="@routes.BooksController.create()"> Add Book </a><br>
